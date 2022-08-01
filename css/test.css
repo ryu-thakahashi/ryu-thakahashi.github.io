@@ -1,0 +1,48 @@
+
+body {
+    font-family: "Noto Sans","Noto Sans JP";
+    margin : 10em;
+    text-align : justify;
+}
+body p {
+font-family: "Noto Serif JP", "Noto Serif";
+font-size: 14px;
+}
+strong {
+font-weight: bold;
+font-family: "Noto Sans","Noto Sans JP";
+}
+h1 {
+    font-family: "Noto Sans JP", "Noto Sans";
+    font-size: 20px;
+    border-bottom: 2px solid #808080;  
+}
+h2 {
+font-family: "Noto Sans", "Noto Sans JP";
+font-size : 14px;
+font-weight: bold;
+}
+img {
+width: 400px;
+}
+ul li {
+    font-family: "Noto Serif JP", "Noto Serif";
+font-size: 14px;
+}
+
+
+thetitle {
+font-size: 40px;
+font-weight: bold;
+font-family: "Noto Sans JP", "Noto Sans";
+}
+subtitle {
+font-family: "Noto Sans", "Noto Sans JP";
+font-size : 25px;
+font-weight: bold;
+}
+
+impression { 
+font-family: "Noto Sans", "Noto Sans JP";
+font-size : 14px;
+}
