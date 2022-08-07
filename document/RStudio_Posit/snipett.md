@@ -263,6 +263,13 @@ snippet ryu.rstan
 
 	rstan_options(auto_write = TRUE)
 	options(mc.cores = parallel::detectCores())
+
+snippet mcmc_result
+	mcmc_result_pred = stan(
+		file = "./src/${1:file_name}.stan",
+		data = data_list_pred,
+		seed = 1
+)
 		
 ${:}
 
