@@ -256,6 +256,13 @@ snippet ryu.path_model
 	summary(fit_med, standardized = T, fit.measures = T, ci = T)
 	fitMeasures(fit_med)
 
+snippet ryu.rstan
+	library(rstan)
+	library(bayesplot)
+	library(tidyverse)
+
+	rstan_options(auto_write = TRUE)
+	options(mc.cores = parallel::detectCores())
 		
 ${:}
 
