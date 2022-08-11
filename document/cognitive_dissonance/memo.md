@@ -31,6 +31,11 @@
 
 
 ## Izuma & Murayama 2013
+自由選択パラダイムは、やばい。
 
 
+# パラダイムと、実際の実験手順
 
+- Blind Choice Paradigm
+- Rate-Rate-Choice Paradigm
+- Implicit Choice Paradigm
