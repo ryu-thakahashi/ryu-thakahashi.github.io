@@ -28,12 +28,7 @@ h2 {
 img {
     width: 100%;
 }
-li {
-    font-family: "Noto Serif JP", "Noto Serif";
-    font-size: 18px;
-    margin-left: -0em;
-}
-ul {
+li ol ul{
     font-family: "Noto Serif JP", "Noto Serif";
     font-size: 18px;
     margin-left: -1em;
