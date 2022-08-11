@@ -8,9 +8,9 @@
 </head>
 
 
-<thetitle>タイトル</thetitle>
+<thetitle>認知的不協和での実験パラダイム</thetitle>
 <br>
-<subtitle>サブタイトル</subtitle>
+<subtitle>自由選択パラダイムの問題点と代替案、および具体例</subtitle>
 
 **目次**
 
@@ -70,11 +70,13 @@ CDTに関する実証研究は、CDTが提唱されて以来60年ほど行われ
   - （選択されなかったことによって）Aは7よりも小さくなる
 
 ![](Images/2022-08-11-10-27-47.png)
+
 Izuma & Murayama (2013)より引用
 
 ## コンピューターシミュレーションの結果
 
 ![](Images/2022-08-11-10-29-32.png)
+
 $u_A$と$u_B$の平均値の差が2ある時のみ、交互作用効果(choice-induced preference change)はなかった。
 
 ## 上記の問題を解決したパラダイム
