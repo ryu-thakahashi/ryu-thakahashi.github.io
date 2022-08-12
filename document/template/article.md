@@ -13,14 +13,7 @@
 
 **目次**
 
-- [セクション](#セクション)
-  - [パラグラフタイトル（全体→限定）](#パラグラフタイトル全体限定)
-  - [方法](#方法)
-- [実験の結果](#実験の結果)
-  - [結果一言で](#結果一言で)
-  - [補足](#補足)
-- [高橋の感想](#高橋の感想)
-  - [一行で乾燥](#一行で乾燥)
+toc
 
 
 <!-- Introduction -->
@@ -53,3 +46,72 @@
 
 </impression>
 
+
+<style>
+
+body {
+    font-family: "Noto Sans","Noto Sans JP";
+    margin : 10px;
+    text-align : justify;
+    background-color: #fcfdf2;
+    color: #11110f;
+}
+body p {
+    font-family: "Noto Serif JP", "Noto Serif";
+    font-size: 18px;
+}
+strong {
+    font-weight: bold;
+    font-family: "Noto Sans","Noto Sans JP";
+}
+h1 {
+    font-family: "Noto Sans JP", "Noto Sans";
+    font-size: 25px;
+    border-bottom: 2px solid #808080;  
+}
+h2 {
+    font-family: "Noto Sans", "Noto Sans JP";
+    font-size : 18px;
+    font-weight: bold;
+    margin-bottom: -1em;
+}
+img {
+    width: 100%;
+}
+li ol ul{
+    font-family: "Noto Serif JP", "Noto Serif";
+    font-size: 18px;
+    margin-left: -1em;
+}
+
+
+thetitle {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Noto Sans JP", "Noto Sans";
+}
+subtitle {
+    font-family: "Noto Sans", "Noto Sans JP";
+    font-size : 25px;
+    font-weight: bold;
+}
+
+impression { 
+    font-family: "Noto Sans", "Noto Sans JP";
+    font-size : 18px;
+}
+/*****
+目次ボタンクリックでtoc_containerを開く
+******/
+
+#tocopen:checked+.toc_container {
+    display: block;
+    padding: 45px;
+    border: 4px solid tan;
+}
+
+.toc_container,.l_toc input[type="checkbox"]{
+    display: none;
+}
+
+</style>
