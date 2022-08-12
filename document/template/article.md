@@ -4,7 +4,7 @@
   <title>
   Document
   </title>
-  <link rel="stylesheet" type="text/css" href="https://ryu-thakahashi.github.io/css/article.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://ryu-thakahashi.github.io/css/article.css"> -->
 </head>
 
 <thetitle>タイトル</thetitle>
@@ -76,7 +76,7 @@ h2 {
     margin-bottom: -1em;
 }
 img {
-    width: 100%;
+    width: 400px;
 }
 li ol ul{
     font-family: "Noto Serif JP", "Noto Serif";
