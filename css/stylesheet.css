@@ -42,6 +42,13 @@ header {
   margin-top: 100px;
   color: #2f4f4f;
  }
+ .content ol, ul, li {
+  margin-left: 13px;
+ }
+
+ .memo {
+  display: none;
+ }
 
 
 footer {
