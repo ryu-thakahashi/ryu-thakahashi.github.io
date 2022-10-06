@@ -26,8 +26,15 @@ toc
 
 # 研究デザイン
 
-## 観察法
+## 目的別研究デザイン
+| Method        | Focus       | Example                         |
+| ------------- | ----------- | ------------------------------- |
+| Observational | Description | Twitterのメッセージを84過酷に送る |
+| Correlational | Prediction  | 身長と体重を測定して、相関係数を算出 |
+| Experimental  | Causality   |  傍観者の多さが、援助行動を妨げる  |
 
+## ちなみに…
+本文中に「The p-value tells us how confident we can be that the difference was due to chance rather than the independent variable.」(p.59)とありますが、間違いです。p-valueはただ単に、「帰無仮説が正しいとしたとき、そのデータが得られる確率」であって、対立仮説が正しい確率(= 確信の度合い)を保証するものではありません。対立仮説の確信の度合いを示すのはBF、もしくは確信区間の面積です。
 
 ## 方法
 
