@@ -22,8 +22,8 @@ header {
   margin-left: 30px;
 }
 .header-right {
-  float: right;
-  margin-right: 100px;
+  float: left;
+  margin-right: 0px;
 }
 .header-right a {
   line-height: 60px;
