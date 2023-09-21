@@ -1,114 +1,156 @@
-<!-- 
-    base-color: #ffffff
-    main-color: #ea4225
-    accent-color: #4285f4
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../favicons/favicon-16x16.png"
+		/>
+		<style>
+			* {
+				font-family: "Noto Sans JP", sans-serif;
+			}
+		</style>
+		<title>Home</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="./index.html">Ryu Takahashi</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">ホーム</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/performances.html">業績</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#">リンク</a>
+						</li>
+						<!-- <li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Dropdown
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Action</a></li>
+								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li><hr class="dropdown-divider" /></li>
+								<li>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled">Disabled</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
 
- -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 p-2">
+					<h2>髙橋 龍（たかはし りゅう）</h2>
+					<h3>所属：東京大学大学院（大坪研究室）</h3>
+				</div>
+			</div>
 
- <!DOCTYPE html>
- <html>
- <head>
-   <meta charset="utf-8">
-   <title>Ryu Takahashi のHP</title>
-   <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
-   <link rel="icon" type="image/png" sizes="16x16"  href="./favicons/favicon-16x16.png">
-   <meta name="msapplication-TileColor" content="#ffffff">
-   <meta name="theme-color" content="#ffffff">
- </head>
- <body>
-   <header>
-     <div class="container">
-       <div class="header-left">
-         <p>Ryu Takahashi's HP</p>
-       </div>
- 
-       <!-- ナビゲーション -->
-      
-       <div class="header-right">
-         <a href="https://ryu-thakahashi.github.io/index.html">Home</a>
-         <a href="https://ryu-thakahashi.github.io/performances/index.html">業績</a>
-         <a href="https://ryu-thakahashi.github.io/document/index.html">資料</a>
-       </div>
-     </div>
- 
-   </header>
- 
-   <!-- 内部ページ -->
-   <div class="content">
-     <h2>髙橋 龍 (たかはし りゅう)</h2>
-     <h4>所属：高知工科大学 経済・マネジメント学群4年</h4>
-     <br>
+			<div class="row">
+				<div class="col-md-10 p-2">
+					<h3>研究テーマ</h3>
+					<p>ネットワーク互恵性に関する理論的・実証的研究</p>
+				</div>
+			</div>
 
-     <h4>研究テーマ</h4>
-     <p>謝罪の適応的側面</p>
-     <p>Social Dominance Orientationと謝罪の関係</p>
-     <p>Costly Apologyと共感の対応関係および因果関係</p>
-    <br>
-
-     <h4>略歴</h4>
-     <table class="biography">
-      <tbody>
-        <tr>
-          <td>2007(H19)年</td>
-          <td>4月</td>
-          <td>石巻市立大谷地小学校</td>
-          <td>入学</td>
-        </tr>
-        <tr>
-          <td>2013(H25)年</td>
-          <td>3月</td>
-          <td>同</td>
-          <td>卒業</td>
-        </tr>
-        <tr>
-          <td>2013(H25)年</td>
-          <td>4月</td>
-          <td>石巻市立河北中学校</td>
-          <td>入学</td>
-        </tr>
-        <tr>
-          <td>2016(H28)年</td>
-          <td>3月</td>
-          <td>同</td>
-          <td>卒業</td>
-        </tr>
-        <tr>
-          <td>2016(H28)年</td>
-          <td>4月</td>
-          <td>宮城県石巻工業高等学校</td>
-          <td>入学</td>
-        </tr>
-        <tr>
-          <td>2019(H31)年</td>
-          <td>3月</td>
-          <td>同</td>
-          <td>卒業</td>
-        </tr>
-        <tr>
-          <td>2019(H31)年</td>
-          <td>4月</td>
-          <td>高知県公立大学法人高知工科大学</td>
-          <td>入学</td>
-        </tr>
-        <tr>
-          <td>2023(R5)年</td>
-          <td>3月</td>
-          <td>同</td>
-          <td>卒業予定</td>
-        </tr>
-      </tbody>
-     </table>
-
-     <p>  </p>
-     <p>     </p>
-
-   </div>
- 
-   <footer>
-     <div class="container">
-       <!-- <p>fotter</p> -->
-     </div>
-   </footer>
- </body>
- </html>
- 
+			<div class="row">
+				<div class="col-md-6">
+					<h3>略歴</h3>
+					<table class="table">
+						<tbody>
+							<tr>
+								<th scope="row">2007(H19)年 4月</th>
+								<td>石巻市立大谷地小学校</td>
+								<td>入学</td>
+							</tr>
+							<tr>
+								<th scope="row">2013(H25)年 3月</th>
+								<td>　　　同</td>
+								<td>卒業</td>
+							</tr>
+							<tr>
+								<th scope="row">2013(H25)年 4月</th>
+								<td>石巻市立河北中学校</td>
+								<td>入学</td>
+							</tr>
+							<tr>
+								<th scope="row">2016(H28)年 3月</th>
+								<td>　　　同</td>
+								<td>卒業</td>
+							</tr>
+							<tr>
+								<th scope="row">2016(H28)年 4月</th>
+								<td>宮城県石巻工業高等学校</td>
+								<td>入学</td>
+							</tr>
+							<tr>
+								<th scope="row">2019(H31)年 3月</th>
+								<td>　　　同</td>
+								<td>卒業</td>
+							</tr>
+							<tr>
+								<th scope="row">2019(H31)年 4月</th>
+								<td>高知県公立大学法人高知工科大学</td>
+								<td>入学</td>
+							</tr>
+							<tr>
+								<th scope="row">2023(R5)年 3月</th>
+								<td>　　　同</td>
+								<td>卒業</td>
+							</tr>
+							<tr>
+								<th scope="row">2023(R5)年 4月</th>
+								<td>
+									東京大学大学院人文社会系研究科<br />社会文化研究専攻（社会心理）
+								</td>
+								<td>入学</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"
+	></script>
+</html>
