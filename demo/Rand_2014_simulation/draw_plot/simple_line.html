@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Line Chart</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <svg width="600" height="400"></svg>
+        <script>
+            // データセット
+            const data = [
+                { date: "2020-01-01", value: 0 },
+                { date: "2020-02-01", value: 20 },
+                { date: "2020-03-01", value: 40 },
+                { date: "2020-04-01", value: 80 },
+                { date: "2020-05-01", value: 160 },
+                { date: "2020-06-01", value: 120 },
+            ];
+
+            // SVG キャンバスのサイズ設定
+            const svg = d3.select("svg"),
+                margin = { top: 20, right: 30, bottom: 30, left: 40 },
+                width = +svg.attr("width") - margin.left - margin.right,
+                height = +svg.attr("height") - margin.top - margin.bottom,
+                g = svg
+                    .append("g")
+                    .attr(
+                        "transform",
+                        `translate(${margin.left},${margin.top})`
+                    );
+
+            // スケールと出力範囲の設定
+            const x = d3.scaleTime().rangeRound([0, width]),
+                y = d3.scaleLinear().rangeRound([height, 0]);
+
+            // X軸とY軸の設定
+            const xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("%b %d")),
+                yAxis = d3.axisLeft(y);
+
+            // データの日付を d3 の timeParse で解析
+            const parseTime = d3.timeParse("%Y-%m-%d");
+            data.forEach((d) => {
+                d.date = parseTime(d.date);
+            });
+
+            // ドメインの設定
+            x.domain(d3.extent(data, (d) => d.date));
+            y.domain([0, d3.max(data, (d) => d.value)]);
+
+            // X軸を SVG に追加
+            g.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(xAxis);
+
+            // Y軸を SVG に追加
+            g.append("g").call(yAxis);
+
+            // 折れ線グラフのラインを生成
+            const line = d3
+                .line()
+                .x((d) => x(d.date))
+                .y((d) => y(d.value));
+
+            // ラインを SVG に追加
+            g.append("path")
+                .datum(data)
+                .attr("fill", "none")
+                .attr("stroke", "steelblue")
+                .attr("stroke-linejoin", "round")
+                .attr("stroke-linecap", "round")
+                .attr("stroke-width", 1.5)
+                .attr("d", line);
+        </script>
+    </body>
+</html>

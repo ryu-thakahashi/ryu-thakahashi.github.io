@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Simple Network Graph</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            .node {
+                fill: #ffab00;
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+            .link {
+                stroke: #999;
+                stroke-opacity: 0.6;
+            }
+        </style>
+    </head>
+    <body>
+        <svg width="600" height="400"></svg>
+
+        <script>
+            const width = 600,
+                height = 400;
+
+            // ノードとリンクのデータ
+            const nodes = [
+                { id: "Node1" },
+                { id: "Node2" },
+                { id: "Node3" },
+                { id: "Node4" },
+            ];
+
+            const links = [
+                { source: "Node1", target: "Node2" },
+                { source: "Node2", target: "Node3" },
+                { source: "Node3", target: "Node4" },
+                { source: "Node4", target: "Node1" }, // サイクルを作成するために最初と最後のノードを接続
+            ];
+
+            // D3の力指向グラフ作成
+            const simulation = d3
+                .forceSimulation(nodes)
+                .force(
+                    "link",
+                    d3.forceLink(links).id((d) => d.id)
+                )
+                .force("charge", d3.forceManyBody().strength(-400))
+                .force("center", d3.forceCenter(width / 2, height / 2));
+
+            const svg = d3.select("svg");
+
+            // リンクを描画
+            const link = svg
+                .append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(links)
+                .enter()
+                .append("line")
+                .attr("class", "link");
+
+            // ノードを描画
+            const node = svg
+                .append("g")
+                .attr("class", "nodes")
+                .selectAll("circle")
+                .data(nodes)
+                .enter()
+                .append("circle")
+                .attr("class", "node")
+                .attr("r", 10);
+
+            // シミュレーションの各ステップでノードとリンクの位置を更新
+            simulation.on("tick", () => {
+                link.attr("x1", (d) => d.source.x)
+                    .attr("y1", (d) => d.source.y)
+                    .attr("x2", (d) => d.target.x)
+                    .attr("y2", (d) => d.target.y);
+
+                node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+            });
+        </script>
+    </body>
+</html>

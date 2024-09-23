@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Attribute-based Node Coloring with D3.js</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            .node {
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+            .link {
+                stroke: #999;
+                stroke-opacity: 0.6;
+            }
+        </style>
+    </head>
+    <body>
+        <svg width="800" height="600"></svg>
+
+        <script>
+            // SVGのサイズを定義
+            const width = 800;
+            const height = 600;
+
+            // ノードとリンクのデータを定義
+            const nodes = [
+                { id: 1, group: 1 },
+                { id: 2, group: 2 },
+                { id: 3, group: 1 },
+                { id: 4, group: 2 },
+                { id: 5, group: 3 },
+                { id: 6, group: 3 },
+            ];
+
+            const links = [
+                { source: 1, target: 2 },
+                { source: 2, target: 3 },
+                { source: 3, target: 4 },
+                { source: 4, target: 5 },
+                { source: 5, target: 6 },
+            ];
+
+            // 色スケールを定義 (グループごとに色を設定)
+            const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+            // SVGを選択
+            const svg = d3.select("svg");
+
+            // 力学モデルを設定
+            const simulation = d3
+                .forceSimulation(nodes)
+                .force(
+                    "link",
+                    d3
+                        .forceLink(links)
+                        .id((d) => d.id)
+                        .distance(100)
+                )
+                .force("charge", d3.forceManyBody().strength(-200))
+                .force("center", d3.forceCenter(width / 2, height / 2));
+
+            // リンクを描画
+            const link = svg
+                .append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(links)
+                .enter()
+                .append("line")
+                .attr("class", "link");
+
+            // ノードを描画し、属性に基づいて色を設定
+            const node = svg
+                .append("g")
+                .attr("class", "nodes")
+                .selectAll("circle")
+                .data(nodes)
+                .enter()
+                .append("circle")
+                .attr("class", "node")
+                .attr("r", 10)
+                .attr("fill", (d) => color(d.group)) // グループ属性に基づいて色を設定
+                .call(
+                    d3
+                        .drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended)
+                );
+
+            // ノードにラベルを追加
+            node.append("title").text((d) => `Node ${d.id} - Group ${d.group}`);
+
+            // シミュレーションの更新時にリンクとノードの位置を更新
+            simulation.on("tick", () => {
+                link.attr("x1", (d) => d.source.x)
+                    .attr("y1", (d) => d.source.y)
+                    .attr("x2", (d) => d.target.x)
+                    .attr("y2", (d) => d.target.y);
+
+                node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+            });
+
+            // ドラッグ操作の関数
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        </script>
+    </body>
+</html>
