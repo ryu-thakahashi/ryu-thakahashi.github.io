@@ -1,3 +1,5 @@
+console.log("add_navigation_bar.js loaded.");
+
 const nav_div = document.getElementById("navigation-div");
 
 const home_link = "/";
@@ -14,48 +16,3 @@ const github_link = "https://github.com/ryu-thakahashi";
 
 const qiita_icon = `<img width="${icon_size}" height="${icon_size}" src="/assets/imgs/qiita-icon.png">`;
 const qiita_link = "https://qiita.com/ryu-takahashi2718";
-
-nav_div.innerHTML = `
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<div class="container-fluid">
-    <a class="navbar-brand" href="${home_link}">Ryu Takahashi</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="${home_link}">ホーム</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${performances_link}">業績</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    リンク
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li>
-                        <a class="dropdown-item item-align-start" href="${github_link}">
-                            ${github_icon}
-                            GitHub
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="${qiita_link}">
-                            ${qiita_icon}
-                            Qiita
-                        </a>
-                    </li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Other Services</a></li>
-                </ul>            
-            </li>
-        </ul>
-    </div>
-</div>
-</nav>
-`;
